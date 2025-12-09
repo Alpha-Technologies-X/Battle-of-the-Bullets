@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: rivals-fps
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    branch: main
+    rootDir: .
