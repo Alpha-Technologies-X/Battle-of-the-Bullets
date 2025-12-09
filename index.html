@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3D FPS Lobby</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; overflow: hidden;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+    #ui {
+      position: absolute; top: 20px; left: 20px;
+      z-index: 10;
+    }
+    button {
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="ui">
+  <button id="match1v1">Start 1v1 Match</button><br>
+  <button id="matchTeams">Start Team Match</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.155/build/three.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
