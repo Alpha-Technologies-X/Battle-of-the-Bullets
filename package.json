@@ -1,12 +1,15 @@
 {
-  "name": "fps-lobby",
+  "name": "rivals-prototype",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "Rivals-like FPS prototype with 3D lobby and matchmaking",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "engines": { "node": ">=18" },
   "dependencies": {
     "express": "^4.18.2",
-    "ws": "^8.14.1"
-  },
-  "scripts": {
-    "start": "node server.js"
+    "uuid": "^9.0.0",
+    "ws": "^8.13.0"
   }
 }
