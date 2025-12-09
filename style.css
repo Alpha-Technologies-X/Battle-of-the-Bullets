@@ -1,0 +1,68 @@
+:root{
+  --bg:#071026;
+  --card:#0b1220;
+  --accent:#4ee1c1;
+  --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.03);
+  --panel-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+html,body{height:100%; margin:0; background:linear-gradient(180deg,#031022 0%, #071026 80%); color:#e6eef8; -webkit-font-smoothing:antialiased;}
+#app {display:grid; grid-template-columns: 380px 1fr; height:100vh; gap:20px; padding:24px; box-sizing:border-box;}
+
+.panel {
+  background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border-radius:14px; padding:16px; box-shadow: var(--panel-shadow);
+  display:flex; flex-direction:column; gap:10px; min-height: calc(100vh - 48px);
+}
+
+.brand h1{ margin:0; font-size:20px; letter-spacing:0.6px; }
+.muted { color:var(--muted); }
+.small { font-size:13px; }
+
+.controls input#displayName { width:100%; padding:10px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit; font-weight:700; }
+.row{ display:flex; gap:8px; margin-top:8px; }
+select#modeSelect { padding:10px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:inherit; font-weight:700; }
+
+.btn {
+  padding:10px 12px; border-radius:10px; border:none; cursor:pointer; font-weight:800; letter-spacing:0.4px;
+  background:transparent; color:var(--accent); border:1px solid rgba(255,255,255,0.04);
+}
+.btn.primary { background: linear-gradient(90deg, #06b6d4, #10b981); color:#02121a; box-shadow: 0 8px 20px rgba(6,182,190,0.08); border:none; }
+.btn.ghost { background:transparent; box-shadow:none; }
+
+.status {
+  padding:10px; border-radius:10px; background: linear-gradient(90deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+.players-list { display:flex; flex-direction:column; gap:8px; margin-top:6px; max-height:300px; overflow:auto; padding-right:6px; }
+.player-row { display:flex; align-items:center; gap:10px; padding:8px; border-radius:10px; background:rgba(255,255,255,0.012); }
+.avatar-mini { width:36px; height:36px; border-radius:50%; box-shadow:0 6px 18px rgba(0,0,0,0.6); flex: 0 0 36px; }
+.player-info{ flex:1; }
+.player-name{ font-weight:800; font-size:14px; }
+.player-meta{ color:var(--muted); font-size:12px; }
+
+.footer { margin-top:auto; font-size:12px; color:var(--muted); }
+
+/* Stage */
+.stage { position:relative; border-radius:14px; overflow:hidden; box-shadow: var(--panel-shadow); background: linear-gradient(180deg, rgba(2,6,23,0.4), rgba(2,6,23,0.6)); }
+#canvas{ width:100%; height:100%; min-height:520px; display:block; }
+
+/* overlay chips */
+.overlay { position:absolute; z-index:6; display:flex; gap:10px; padding:10px; }
+.ui-top { top:18px; left:18px; }
+.ui-bottom { bottom:18px; left:18px; right:18px; justify-content:flex-end; }
+
+.chip { background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px 12px; border-radius:12px; font-weight:800; color:var(--accent); border:1px solid rgba(255,255,255,0.02); }
+
+.hud { display:flex; gap:12px; align-items:center; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:8px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
+.hud div { font-weight:700; color:#fff; }
+
+/* responsive */
+@media (max-width:980px) {
+  #app { grid-template-columns: 1fr; grid-auto-rows: auto 1fr; padding:12px; }
+  .panel { min-height:unset; max-height:unset; }
+  #canvas { min-height:420px; }
+}
